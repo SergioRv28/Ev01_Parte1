@@ -8,6 +8,12 @@ public class FlightReservation {
             String code, String passengerName,
             String passportNumber,int seats, LocalDate flightDate){
 
+        //validamos que ningun campo obligatorio este vacio
+        if(code== null || code.trim().isEmpty() || passengerName == null || passengerName.trim().isEmpty() ||
+                passportNumber == null || passportNumber.trim().isEmpty() || flightDate == null){
+            return "Debe ingresar todos los datos requeridos";
+        }
+
         // validamos el codigo de reserva
         if( code== null || !code.matches("[A-Z]{3}[0-9]{3}")){
             return "Ingrese un codigo de reserva valido";
@@ -28,6 +34,8 @@ public class FlightReservation {
         if (flightDate== null || !flightDate.isAfter(LocalDate.now())){
             return "La fecha del vuelo debe ser posterior a la fecha actual";
         }
+
+
 
     //Caso 1
     return "La reserva ha sido registrada correctamente";
