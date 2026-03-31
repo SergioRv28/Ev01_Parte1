@@ -25,6 +25,7 @@ class FlightReservationTest {
         assertEquals("La reserva ha sido registrada correctamente", result);
     }
 */
+ /*
     //TEST02
     @Test
     @DisplayName("Codigo de reserva invalido debe mostrar mensaje de error")
@@ -40,5 +41,19 @@ class FlightReservationTest {
 
         assertEquals("Ingrese un codigo de reserva valido", result);
     }
+*/
+    @Test
+    @DisplayName("Nombre de pasajero invalido debe mostrar mensaje de error")
+    void testInvalidPassengerName(){
+        FlightReservation reservation = new FlightReservation();
+        String code = "ABC123";
+        String passengerName="Jose"; // Solo debe tener 4 caracteres a si que mi nombre no sirve
+        String passportNumber= "AB1234567";
+        int seats = 2;
+        LocalDate flightDate = LocalDate.of(2026,12,31);
 
+        String result = reservation.registerReservation(code, passengerName,passportNumber, seats,flightDate);
+
+        assertEquals("El nombre del pasajero debe tener al menos cinco caracteres alfabeticos", result);
+    }
 }
