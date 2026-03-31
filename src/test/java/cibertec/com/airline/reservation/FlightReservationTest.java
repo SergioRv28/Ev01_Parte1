@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class FlightReservationTest {
 /*
-    //TEST01
+
     @Test
     @DisplayName("Caso 1")
     void testValidReservation(){
@@ -26,7 +26,7 @@ class FlightReservationTest {
     }
 */
  /*
-    //TEST02
+    //TEST01
     @Test
     @DisplayName("Codigo de reserva invalido debe mostrar mensaje de error")
     void testInvalidReservationCode(){
@@ -43,7 +43,7 @@ class FlightReservationTest {
     }
 */
 /*
-    //TEST03
+    //TEST02
     @Test
     @DisplayName("Nombre de pasajero invalido debe mostrar mensaje de error")
     void testInvalidPassengerName(){
@@ -61,7 +61,7 @@ class FlightReservationTest {
 
  */
 /*
-    //TEST04
+    //TEST03
     @Test
     @DisplayName("Numero de pasaporte invalido debe mostrar error")
     void  testInvalidPassportNumber(){
@@ -79,7 +79,8 @@ class FlightReservationTest {
     }
 
  */
-//TEST05
+    /*
+//TEST04
 @Test
 @DisplayName("Cantidad de asientos invalida debe mostrar mensaje de error")
 void  testInvalidSeats(){
@@ -93,6 +94,24 @@ void  testInvalidSeats(){
     String result = reservation.registerReservation(code, passengerName,passportNumber, seats,flightDate);
 
     assertEquals("La cantidad de asientos debe ser mayor a cero", result);
+
+}
+
+     */
+//TEST05
+@Test
+@DisplayName("Fecha de vuelo invalida debe mostar mensaje de error")
+void  testInvalidFlightDate(){
+    FlightReservation reservation = new FlightReservation();
+    String code= "ABC123";
+    String passengerName = "Sergio Rodriguez";
+    String passportNumber = "AB1234567";
+    int seats = 2;
+    LocalDate flightDate = LocalDate.of(2020,12,31);// fecha pasada invalida
+
+    String result = reservation.registerReservation(code, passengerName,passportNumber, seats,flightDate);
+
+    assertEquals("La fecha del vuelo debe ser posterior a la fecha actual", result);
 
 }
 }

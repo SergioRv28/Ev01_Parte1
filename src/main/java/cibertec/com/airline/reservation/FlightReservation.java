@@ -20,6 +20,10 @@ public class FlightReservation {
         if(passportNumber == null || !passportNumber.matches("[A-Za-z0-9]{8,10}")){
             return "Ingrese un numero de pasaporte valido";
         }
+        //validamos cantidad de asientos
+        if (seats <= 0){
+            return "La cantidad de asientos debe ser mayor a cero";
+        }
 
     //Caso 1
     return "La reserva ha sido registrada correctamente";
