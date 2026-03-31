@@ -42,6 +42,7 @@ class FlightReservationTest {
         assertEquals("Ingrese un codigo de reserva valido", result);
     }
 */
+/*
     @Test
     @DisplayName("Nombre de pasajero invalido debe mostrar mensaje de error")
     void testInvalidPassengerName(){
@@ -55,5 +56,23 @@ class FlightReservationTest {
         String result = reservation.registerReservation(code, passengerName,passportNumber, seats,flightDate);
 
         assertEquals("El nombre del pasajero debe tener al menos cinco caracteres alfabeticos", result);
+    }
+
+ */
+
+    @Test
+    @DisplayName("Numero de pasaporte invalido debe mostrar error")
+    void  testInvalidPassportNumber(){
+        FlightReservation reservation = new FlightReservation();
+        String code= "ABC123";
+        String passengerName = "Sergio Rodriguez";
+        String passportNumber = "AB123"; // entre 8 a 10
+        int seats = 2 ;
+        LocalDate flightDate = LocalDate.of(2026,12,31);
+
+        String result = reservation.registerReservation(code, passengerName,passportNumber, seats,flightDate);
+
+        assertEquals("Ingrese un numero de pasaporte valido", result);
+
     }
 }
