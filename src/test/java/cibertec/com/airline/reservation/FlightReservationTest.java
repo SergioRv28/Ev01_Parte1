@@ -21,6 +21,6 @@ class FlightReservationTest {
 
         String result = reservation.registerReservation(code, passengerName, passportNumber, seats, flightDate);
 
-        assertEquals("La reserva ha sido registrada correctamente", result);
+        assertEquals("La resera ha sido registrada correctamente", result);
     }
 }
