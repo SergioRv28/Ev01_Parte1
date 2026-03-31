@@ -24,6 +24,10 @@ public class FlightReservation {
         if (seats <= 0){
             return "La cantidad de asientos debe ser mayor a cero";
         }
+        //validamos fecha de vuelo
+        if (flightDate== null || !flightDate.isAfter(LocalDate.now())){
+            return "La fecha del vuelo debe ser posterior a la fecha actual";
+        }
 
     //Caso 1
     return "La reserva ha sido registrada correctamente";
