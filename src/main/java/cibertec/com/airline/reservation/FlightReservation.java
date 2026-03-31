@@ -8,7 +8,7 @@ public class FlightReservation {
             String code, String passengerName,
             String passportNumber,int seats, LocalDate flightDate)
     {
-    return "La reserva ha sido registrada correctamente";
+    return "null";
     }
 
 }
