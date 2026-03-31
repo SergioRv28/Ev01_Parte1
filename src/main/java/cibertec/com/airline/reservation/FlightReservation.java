@@ -16,6 +16,10 @@ public class FlightReservation {
         if(passengerName == null || !passengerName.matches("[A-Za-z ]{5,}")){
             return "El nombre del pasajero debe tener al menos cinco caracteres alfabeticos";
         }
+        // validamos numero de pasaporte entre 8 a 10
+        if(passportNumber == null || !passportNumber.matches("[A-Za-z0-9]{8,10}")){
+            return "Ingrese un numero de pasaporte valido";
+        }
 
     //Caso 1
     return "La reserva ha sido registrada correctamente";
