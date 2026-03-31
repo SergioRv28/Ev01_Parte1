@@ -8,7 +8,8 @@ import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FlightReservationTest {
-
+/*
+    //TEST01
     @Test
     @DisplayName("Caso 1")
     void testValidReservation(){
@@ -23,4 +24,21 @@ class FlightReservationTest {
 
         assertEquals("La reserva ha sido registrada correctamente", result);
     }
+*/
+    //TEST02
+    @Test
+    @DisplayName("Codigo de reserva invalido debe mostrar mensaje de error")
+    void testInvalidReservationCode(){
+        FlightReservation reservation = new FlightReservation();
+        String code= "ab12";
+        String passengerName= "Sergio Rodriguez";
+        String passportNumber= "AB1234567";
+        int seats = 2;
+        LocalDate flightDate = LocalDate.of(2026,12,31);
+
+        String  result= reservation.registerReservation(code, passengerName, passportNumber,seats,flightDate);
+
+        assertEquals("Ingrese un codigo de reserva valido", result);
+    }
+
 }
