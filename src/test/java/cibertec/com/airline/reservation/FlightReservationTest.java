@@ -43,6 +43,7 @@ class FlightReservationTest {
     }
 */
 /*
+    //TEST03
     @Test
     @DisplayName("Nombre de pasajero invalido debe mostrar mensaje de error")
     void testInvalidPassengerName(){
@@ -59,7 +60,8 @@ class FlightReservationTest {
     }
 
  */
-
+/*
+    //TEST04
     @Test
     @DisplayName("Numero de pasaporte invalido debe mostrar error")
     void  testInvalidPassportNumber(){
@@ -75,4 +77,22 @@ class FlightReservationTest {
         assertEquals("Ingrese un numero de pasaporte valido", result);
 
     }
+
+ */
+//TEST05
+@Test
+@DisplayName("Cantidad de asientos invalida debe mostrar mensaje de error")
+void  testInvalidSeats(){
+    FlightReservation reservation = new FlightReservation();
+    String code= "ABC123";
+    String passengerName = "Sergio Rodriguez";
+    String passportNumber = "AB1234567";
+    int seats = 0 ;// debe ser mayor a 0
+    LocalDate flightDate = LocalDate.of(2026,12,31);
+
+    String result = reservation.registerReservation(code, passengerName,passportNumber, seats,flightDate);
+
+    assertEquals("La cantidad de asientos debe ser mayor a cero", result);
+
+}
 }
