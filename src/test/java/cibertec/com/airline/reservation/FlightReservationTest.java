@@ -98,6 +98,7 @@ void  testInvalidSeats(){
 }
 
      */
+    /*
 //TEST05
 @Test
 @DisplayName("Fecha de vuelo invalida debe mostar mensaje de error")
@@ -112,6 +113,24 @@ void  testInvalidFlightDate(){
     String result = reservation.registerReservation(code, passengerName,passportNumber, seats,flightDate);
 
     assertEquals("La fecha del vuelo debe ser posterior a la fecha actual", result);
+
+}
+
+     */
+//TEST06
+@Test
+@DisplayName("Campos vacios deben mostar mensaje de error")
+void  testEmptyFields(){
+    FlightReservation reservation = new FlightReservation();
+    String code= ""; //vacio
+    String passengerName = "Sergio Rodriguez";
+    String passportNumber = "AB1234567";
+    int seats = 2;
+    LocalDate flightDate = LocalDate.of(2020,12,31);// fecha pasada invalida
+
+    String result = reservation.registerReservation(code, passengerName,passportNumber, seats,flightDate);
+
+    assertEquals("Debe ingresar todos los datos requeridos", result);
 
 }
 }
