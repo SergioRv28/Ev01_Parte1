@@ -12,7 +12,12 @@ public class FlightReservation {
         if( code== null || !code.matches("[A-Z]{3}[0-9]{3}")){
             return "Ingrese un codigo de reserva valido";
         }
+        //validamos nombre del pasajero(5 caracteres)
+        if(passengerName == null || !passengerName.matches("[A-Za-z ]{5,}")){
+            return "El nombre del pasajero debe tener al menos cinco caracteres alfabeticos";
+        }
 
+    //Caso 1
     return "La reserva ha sido registrada correctamente";
     }
 
